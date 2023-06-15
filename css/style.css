@@ -1,0 +1,24 @@
+html, body {
+  margin: 0px;
+  background-color: #2f4f30;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  background-color:black;
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.cartas-img {
+  position: relative;
+  width: 150px;
+  left: 100px;
+  margin-left: -75px;
+}
+
+#Player-Cartas, #Computer-Cartas {
+  height: 240px;
+}
