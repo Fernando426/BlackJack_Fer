@@ -1,4 +1,8 @@
 html, body {
+  background-image: url(../assets/BackgroundSexy2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: 30px; */
   margin: 0px;
   background-color: #2f4f30;
   color: #fff;
