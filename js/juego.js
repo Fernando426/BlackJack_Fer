@@ -9,6 +9,12 @@ let deck           = [];
 const types        = ['C','D','H','S'];
 const specialCards = ['A','J','Q','K'];
 
+let puntosJugador = 0;
+let puntosComputadora = 0;
+
+// Referencias del HTML
+const btnPedir = document.querySelector(' #btnPedir');
+const puntosHTML = document.querySelectorAll('small') ;
 
 //Function to create a deck
 const creearDeck = () => {
@@ -37,11 +43,7 @@ const requestCard = () => {
   if (deck.length === 0 ) {
     throw 'there is not cards';
   }
-  
   const card = deck.pop();
-
-  console.log(deck)
-  console.log(card)
   return card;
 }
 
@@ -53,19 +55,19 @@ const valorCarta = ( card ) => {
   return (isNaN( valor ) ) ? 
           (valor === 'A') ? 11 : 10
           :valor * 1;
-  // let puntos = 0;
-  // console.log({valor});
-  // if(isNaN(valor)) {
-  //   console.log('No es un numero')
-  //   console.log(puntos);
-
-  // }else{
-  //   console.log('Es un numero')
-  //   puntos = valor*1;
-  // }
-  // console.log(puntos);
-  
 }
 
-const valor = valorCarta( requestCard() );
-console.log({ valor });
+
+
+
+//Eventos
+btnPedir.addEventListener('click', () => {
+  
+  const carta = requestCard();
+  
+  puntosJugador = puntosJugador + valorCarta(carta)
+  puntosHTML[0].innerText = puntosJugador
+
+  console.log(puntosJugador)
+
+});
